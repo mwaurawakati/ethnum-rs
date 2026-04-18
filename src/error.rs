@@ -13,7 +13,7 @@ pub const fn pie(kind: IntErrorKind) -> ParseIntError {
 
 /// Returns a `TryFromIntError`.
 pub const fn tfie() -> TryFromIntError {
-    u8::try_from(256u16).unwrap_err()
+    unsafe { mem::transmute(!) }
 }
 
 #[cfg(test)]
