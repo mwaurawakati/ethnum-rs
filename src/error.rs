@@ -11,10 +11,10 @@ pub const fn pie(kind: IntErrorKind) -> ParseIntError {
     unsafe { mem::transmute(kind) }
 }
 
-// /// Returns a `TryFromIntError`.
-// pub const fn tfie() -> TryFromIntError {
-//     unsafe { mem::transmute(()) }
-// }
+/// Returns a `TryFromIntError`.
+pub const fn tfie() -> TryFromIntError {
+    u8::try_from(256u16).unwrap_err()
+}
 
 #[cfg(test)]
 mod tests {
