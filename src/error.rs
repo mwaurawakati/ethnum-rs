@@ -13,7 +13,7 @@ pub const fn pie(kind: IntErrorKind) -> ParseIntError {
 
 /// Returns a `TryFromIntError`.
 pub const fn tfie() -> TryFromIntError {
-    unsafe { mem::transmute(IntErrorKind::Empty()) }
+    unsafe { mem::transmute(IntErrorKind::Empty) }
 }
 
 #[cfg(test)]
